@@ -5,18 +5,18 @@ public class guessingGame {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
-        int secret = random.nextInt(100) + 1;   // 1 to 100
-        int maxTries = 7;
-        boolean won = false;
         char play;
     do {
+        int maxTries = 7;
+        boolean won = false;
+        int secret = random.nextInt(100) + 1;   // 1 to 100
         System.out.println("I picked a number from 1 to 100. You have " + maxTries + " tries.");
         int attempt = 1;
         while (attempt <= maxTries) {
             System.out.print("Guess #" + attempt + ": ");
             int guess = sc.nextInt();
             if (guess < 1 || guess > 100) {
-                //System.out.println("Reject guesses outside 1 to 100");
+                System.out.println("Please enter in between 1 to 100");
                 attempt--;
                 continue;
             } else if (guess == secret) {
